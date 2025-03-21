@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        SONAR_URL = 'http://localhost:9000'
+        SONAR_URL = 'http://80.233.35.117:9000'
         SONAR_SCANNER = 'sonar-scanner'
         DOCKERHUB_USERNAME = 'michaelroddy04'
         SONAR_PROJECT_KEY = 'sonar-project-local'
