@@ -16,7 +16,7 @@ pipeline {
             }
         }
 
-        stage('Create Docker Image and Push Docker Image to DockerHu') {
+        stage('Create Docker Image and Push Docker Image to DockerHub') {
             steps {
                 sh 'docker build -t user-management-service .'
                  withDockerRegistry([credentialsId: 'docker-hub-credentials', url: '']) {
