@@ -26,10 +26,6 @@ pipeline {
             }
         }
 
-        // stage('Deploy to AWS') {
-        //     steps {
-        //         sh 'ansible-playbook -i inventory deploy.yml'
-        //     }
-        // }
+
     }
 }
