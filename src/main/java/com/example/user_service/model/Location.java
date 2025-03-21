@@ -1,4 +1,4 @@
-package com.dating_app.user_service.model;
+package com.example.user_service.model;
 
 public class Location {
     private String longitude;

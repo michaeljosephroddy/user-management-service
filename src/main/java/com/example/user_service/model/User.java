@@ -1,4 +1,4 @@
-package com.dating_app.user_service.model;
+package com.example.user_service.model;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;

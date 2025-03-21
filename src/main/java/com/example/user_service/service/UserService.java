@@ -1,13 +1,11 @@
-package com.dating_app.user_service.service;
+package com.example.user_service.service;
 
-import com.dating_app.user_service.exception.UserAlreadyExistsException;
-import com.dating_app.user_service.exception.UserNotFoundException;
-import com.dating_app.user_service.model.User;
-import com.dating_app.user_service.model.UserDTO;
-import com.dating_app.user_service.repository.UserRepository;
-import com.dating_app.user_service.util.LocationConverter;
-import com.dating_app.user_service.util.UserConverter;
-import org.locationtech.jts.geom.Point;
+import com.example.user_service.exception.UserAlreadyExistsException;
+import com.example.user_service.exception.UserNotFoundException;
+import com.example.user_service.model.User;
+import com.example.user_service.model.UserDTO;
+import com.example.user_service.repository.UserRepository;
+import com.example.user_service.util.UserConverter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

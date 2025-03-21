@@ -1,10 +1,10 @@
-package com.dating_app.user_service.exception;
+package com.example.user_service.exception;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import com.dating_app.user_service.model.ErrorResponse;
+import com.example.user_service.model.ErrorResponse;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {

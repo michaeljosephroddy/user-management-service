@@ -1,4 +1,4 @@
-package com.dating_app.user_service.util;
+package com.example.user_service.util;
 
 import org.locationtech.jts.geom.Coordinate;
 import org.locationtech.jts.geom.GeometryFactory;

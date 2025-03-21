@@ -1,7 +1,7 @@
-package com.dating_app.user_service.util;
+package com.example.user_service.util;
 
-import com.dating_app.user_service.model.User;
-import com.dating_app.user_service.model.UserDTO;
+import com.example.user_service.model.User;
+import com.example.user_service.model.UserDTO;
 
 public class UserConverter {
 

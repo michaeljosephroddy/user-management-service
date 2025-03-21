@@ -1,8 +1,8 @@
-package com.dating_app.user_service.controller;
+package com.example.user_service.controller;
 
-import com.dating_app.user_service.model.User;
-import com.dating_app.user_service.model.UserDTO;
-import com.dating_app.user_service.service.UserService;
+import com.example.user_service.model.User;
+import com.example.user_service.model.UserDTO;
+import com.example.user_service.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

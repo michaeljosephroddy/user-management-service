@@ -1,13 +1,6 @@
 pipeline {
     agent any
 
-    environment {
-        SONAR_URL = 'http://80.233.35.117:9000'
-        SONAR_SCANNER = 'sonar-scanner'
-        DOCKERHUB_USERNAME = 'michaelroddy04'
-        SONAR_PROJECT_KEY = 'sonar-project-local'
-    }
-
     stages {
         stage('Checkout Code') {
             steps {
@@ -15,36 +8,21 @@ pipeline {
             }
         }
 
-        stage('Build with Maven') {
-            steps {
-                sh 'mvn clean package'
+        stage('Build with Maven and Static Code Analysis') {
+            steps{
+                withSonarQubeEnv('SonarQube') {
+                    sh "mvn clean verify sonar:sonar -Dsonar.projectKey=sonar-project-local -Dsonar.projectName='sonar-project-local'"
+                }
             }
         }
 
-        stage('Static Code Analysis') {
-            steps {
-                sh "${SONAR_SCANNER} -Dsonar.projectKey=${SONAR_PROJECT_KEY} -Dsonar.sources=src -Dsonar.host.url=${SONAR_URL}"
-            }
-        }
-
-        stage('Unit Tests') {
-            steps {
-                sh 'mvn test'
-            }
-        }
-
-        stage('Create Docker Image') {
+        stage('Create Docker Image and Push Docker Image to DockerHu') {
             steps {
                 sh 'docker build -t user-management-service .'
-            }
-        }
-
-        stage('Push Docker Image to DockerHub') {
-            steps {
-                withDockerRegistry([credentialsId: 'docker-hub-credentials', url: '']) {
-                    sh 'docker tag user-management-service ${DOCKERHUB_USERNAME}/user-management-service'
-                    sh 'docker push ${DOCKERHUB_USERNAME}/user-management-service'
-                }
+                 withDockerRegistry([credentialsId: 'docker-hub-credentials', url: '']) {
+                    sh 'docker tag user-management-service michaelroddy04/user-management-service'
+                    sh 'docker push michaelroddy04/user-management-service'
+                 }
             }
         }
 
