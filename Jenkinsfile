@@ -5,13 +5,13 @@ pipeline {
         SONAR_URL = 'http://localhost:9000'
         SONAR_SCANNER = 'sonar-scanner'
         DOCKERHUB_USERNAME = 'michaelroddy04'
-        SONAR_PROJECT_KEY = 'your_project_key'
+        SONAR_PROJECT_KEY = 'sonar-project-local'
     }
 
     stages {
         stage('Checkout Code') {
             steps {
-                git 'https://github.com/michaeljosephroddy/user-management-service.git'
+                git branch: 'main', url: 'https://github.com/michaeljosephroddy/user-management-service.git'
             }
         }
 
